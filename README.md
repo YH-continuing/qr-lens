@@ -76,14 +76,20 @@ cp node_modules/jsqr/dist/jsQR.js  qr-lens/jsQR.js
 
 ---
 
-## 2. 加载到 Chrome（开箱即用）
+## 2. 安装（最简单，推荐从 Release 下载 ZIP）
 
-1. 打开 `chrome://extensions`，右上角开启 **开发者模式**。
-2. 点击 **加载已解压的扩展程序**，选择本 `qr-lens` 目录。
-3. 右键图片 / 打开弹窗 / 按 `Alt+Shift+Q` 即可使用。
+### 方式 A：下载 ZIP 安装（推荐）
+1. 打开本仓库的 **Releases** 页面，下载 `qr-lens-v1.0.0.zip`（或直接「Code → Download ZIP」）。
+2. 解压出含 `manifest.json` 的文件夹，放到一个固定位置。
+3. 打开 `chrome://extensions`，右上角开启 **开发者模式**。
+4. 点击 **加载已解压的扩展程序**，选择解压后的那个文件夹即可。
+5. 右键图片 / 点插件图标 / 按 `Alt+Shift+Q` 即可使用。
 
-> 首次加载后，`chrome.contextMenus` 由 `onInstalled` 钩子创建，若右键菜单未出现，
-> 重新加载一次扩展或重启浏览器即可。
+> 首次加载后若右键菜单未出现，在扩展页点一次「重新加载」即可（`contextMenus` 由 `onInstalled` 注册）。
+
+### 方式 B：从源码目录加载（开发）
+1. 克隆仓库，或用本机的 `qr-lens` 源码目录。
+2. 同上：`chrome://extensions` → 开发者模式 → 加载已解压的扩展程序 → 选该目录。
 
 ---
 
