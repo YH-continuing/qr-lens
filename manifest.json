@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "QR Lens - 轻量二维码识别与跳转",
+  "short_name": "QR Lens",
+  "version": "1.0.0",
+  "description": "右键图片 / 区域截屏 / 粘贴上传，多场景识别二维码：有效 URL 直接在新标签页打开，纯文本自动复制并 Toast 提示；无历史记录、无持久化存储。",
+  "minimum_chrome_version": "109",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "QR Lens - 识别二维码",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "trigger-scan": {
+      "suggested_key": {
+        "default": "Alt+Shift+Q"
+      },
+      "description": "区域截屏识别二维码"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Lens</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="app-head">
+      <img src="../icons/icon48.png" alt="QR Lens" class="app-logo" />
+      <div class="app-title">
+        <h1>QR Lens</h1>
+        <p>多场景二维码识别</p>
+      </div>
+    </header>
+
+    <section id="dropZone" class="drop-zone" tabindex="0" title="拖拽图片到此处，或 Ctrl+V 粘贴">
+      <svg viewBox="0 0 24 24" class="dz-icon" aria-hidden="true">
+        <path fill="currentColor" d="M19 13h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6h2v6h14V13zm-7-9a1 1 0 0 1 1 1v7.6l2.3-2.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L11 12.6V5a1 1 0 0 1 1-1z"/>
+      </svg>
+      <p class="dz-title">拖入本地图片 / 粘贴 (Ctrl+V)</p>
+      <p class="dz-sub" id="dzSub">或点击选择图片文件</p>
+      <input type="file" id="fileInput" accept="image/*" hidden />
+    </section>
+
+    <div class="actions">
+      <button id="btnScreen" class="btn btn-primary" type="button">
+        区域截屏识别
+      </button>
+      <button id="btnPick" class="btn btn-ghost" type="button">选择图片</button>
+    </div>
+
+    <section id="result" class="result" hidden>
+      <div class="result-head">
+        <span id="resultStatus" class="badge">已识别</span>
+        <button id="btnClose" class="close" type="button" title="关闭">✕</button>
+      </div>
+      <div id="resultBody" class="result-body"></div>
+      <div class="result-actions">
+        <button id="btnCopy" class="btn btn-ghost" type="button" hidden>复制</button>
+        <button id="btnOpen" class="btn btn-primary" type="button" hidden>打开链接</button>
+      </div>
+    </section>
+
+    <p class="foot">无历史记录 · 不存储任何数据，仅本地实时识别</p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

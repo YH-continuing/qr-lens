@@ -1,0 +1,95 @@
+/* QR Lens - content.css */
+/* 区域截屏蒙版 */
+.qrlens-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  background: rgba(0, 0, 0, 0.45);
+  cursor: crosshair;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.qrlens-hint {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.qrlens-sel {
+  position: fixed;
+  z-index: 2147483647;
+  border: 2px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.15);
+  pointer-events: none;
+}
+
+/* Toast 浮层 */
+.qrlens-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translate(-50%, 20px);
+  z-index: 2147483647;
+  max-width: min(560px, calc(100vw - 32px));
+  background: rgba(20, 20, 22, 0.96);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
+.qrlens-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+.qrlens-toast .t-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #93c5fd;
+}
+.qrlens-toast a {
+  color: #60a5fa;
+  text-decoration: underline;
+  word-break: break-all;
+}
+.qrlens-toast .t-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: none;
+  border: 0;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+.qrlens-toast .t-copy {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #34d399;
+}
+
+html.qrlens-active,
+html.qrlens-active * {
+  cursor: crosshair !important;
+}

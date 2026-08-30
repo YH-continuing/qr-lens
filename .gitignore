@@ -1,0 +1,4 @@
+node_modules/
+.qrtest/
+.DS_Store
+*.log
